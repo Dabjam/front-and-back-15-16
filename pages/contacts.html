@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Контакты</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="icon" href="../images/icon.ico" type="image/x-icon">
+</head>
+<body data-theme="light" class="bg-light">
+    <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+    <div class="container-fluid p-0 d-flex flex-column min-vh-100">
+        <header class="text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <picture>
+                            <source type="image/avif" 
+                                    srcset="../images/logo/logo-40.avif 40w,
+                                            ../images/logo/logo-80.avif 80w"
+                                    sizes="40px">
+                            <source type="image/webp"
+                                    srcset="../images/logo/logo-40.webp 40w,
+                                            ../images/logo/logo-80.webp 80w"
+                                    sizes="40px">
+                            <img src="../images/logo-40.jpg" 
+                                 srcset="../images/logo/logo-40.jpg 40w,
+                                         ../images/logo/logo-80.jpg 80w"
+                                 sizes="40px"
+                                 width="40" height="40"
+                                 style="border-radius: 16px;" 
+                                 alt="Логотип" 
+                                 class="logo"
+                                 loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="col">
+                        <h1 class="h3 mb-1 section-title">Поздышев Эдуард</h1>
+                    </div>
+                    <div class="col-auto">
+                        <span class="badge bg-light text-primary">ЭФБО-13-24</span>
+                        <button class="theme-toggle btn btn-link text-white ms-3" onclick="toggleTheme()">Тема</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house me-1"></i>Главная</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html"><i class="bi bi-newspaper me-1"></i>Проекты</a></li>
+                        <li class="nav-item"><a class="nav-link" href="diary.html"><i class="bi bi-code-slash me-1"></i>Дневник</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contacts.html"><i class="bi bi-telephone me-1"></i>Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main id="main" class="container my-5 flex-grow-1">
+            <section class="mb-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h4 mb-0 section-title">Свяжитесь со мной</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="contactForm" novalidate>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Имя</label>
+                                <input type="text" class="form-control" id="name" name="name" required 
+                                       pattern="[A-Za-zА-Яа-яЁё\s-]{2,50}"
+                                       aria-describedby="name-hint name-error">
+                                <small id="name-hint" class="visually-hidden">Введите ваше полное имя (2-50 символов)</small>
+                                <span id="name-error" class="visually-hidden" role="alert"></span>
+                                <div class="invalid-feedback">Введите корректное имя (2-50 символов).</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required
+                                       aria-describedby="email-hint email-error">
+                                <small id="email-hint" class="visually-hidden">Мы пришлём ответ на этот адрес</small>
+                                <span id="email-error" class="visually-hidden" role="alert"></span>
+                                <div class="invalid-feedback">Введите корректный email.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Сообщение</label>
+                                <textarea class="form-control" id="message" name="message" rows="4" required
+                                          aria-describedby="message-hint message-error"></textarea>
+                                <small id="message-hint" class="visually-hidden">Опишите ваше сообщение подробно</small>
+                                <span id="message-error" class="visually-hidden" role="alert"></span>
+                                <div class="invalid-feedback">Сообщение не может быть пустым.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary button">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="card shadow-sm">
+                    <div class="card-header bg-light">
+                        <h3 class="card-title h4 mb-0 section-title">Мои контакты</h3>
+                    </div>
+                    <div class="card-body">
+                        <p><i class="bi bi-envelope-fill me-2"></i> student@edu.ru</p>
+                        <p><a href="https://github.com/Dabjam" target="_blank" class="text-decoration-none"><i class="bi bi-github me-2"></i> GitHub: Dabjam</a></p>
+                        <p><i class="bi bi-geo-alt-fill me-2"></i> Москва, Россия</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">© 2025 Портфолио. Все права защищены.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="contacts.html" class="text-white text-decoration-none me-3">Контакты</a>
+                        <a href="#" class="text-white text-decoration-none">Политика конфиденциальности</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            if (form.checkValidity()) {
+                alert('Сообщение отправлено!');
+                form.reset();
+                form.classList.remove('was-validated');
+            } else {
+                form.classList.add('was-validated');
+            }
+        });
+
+        function toggleTheme() {
+            const body = document.body;
+            const current = body.getAttribute('data-theme');
+            body.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
+        }
+    </script>
+</body>
+</html>
